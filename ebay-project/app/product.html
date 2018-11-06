@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decentralized Ecommerce Store</title>
+    <!-- <link rel="stylesheet" type='text/css' href="stylesheets/app.css"> -->
+    <!-- <script type="text/javascript" src="javascripts/jquery-1.12.4.min.js"></script> -->
+    <script type="text/javascript" src="app.js"></script>
+    <base href="/">
+</head>
+<body>
+<div class="top_header">
+    <h2>Ecommerce Store</h2>
+</div>
+
+<div class="center_wrap" id="product-details">
+    <div class="left_goods_show" id="product-image">
+        <!-- <img src="images/001_big.jpg" alt="手表"> -->
+    </div>
+    <div id="product-name"></div>
+    <div id="product-auction-end"></div>
+    <div id="product-desc" class="right_goods_data">
+        <h2>Product Description</h2>
+        <!-- 产品描述信息 -->
+    </div>
+
+    <div class="right_goods_data">
+        <h3 id="product-name"><!-- 天梭TISSOT-杜鲁尔系列 T099.407.36.038.00 机械男表 --></h3>
+        <h4>Start Price:<span id="product-price"></span></h4>
+        <form class="form_pannel" id="bidding">
+            <h5>Your Bid</h5>
+            <div class="form_group">
+                <label>Enter Bid Amount:</label>
+                <input type="text" placeholder="Amount>Start Price" name="bid-amount" id="bid-amount">
+            </div>
+            <div class="form_group">
+                <label>Enter Amount To Send:</label>
+                <input type="text" placeholder="Amount>Bid Price" name="bid-send-amount" id="bid-send-amount">
+            </div>
+            <div class="form_group">
+                <label>Enter Secret Text:</label>
+                <input type="text" placeholder="Any random text" name="secret-text" id="secret-text">
+            </div>
+            <input type="hidden" name="product-id" id="product-id"/>
+            <input type="submit" value="Submit Bid" class="input_sub">
+        </form>
+        <form class="form_pannel" id="revealing">
+            <h5>Reveal Bid</h5>
+            <div class="form_group">
+                <label>Amount You Bid:</label>
+                <input type="text" placeholder="Amount>Start Price" name="actual-amount" id="actual-amount">
+            </div>
+            <div class="form_group">
+                <label>Enter Secret Text:</label>
+                <input type="text" placeholder="Any random text" name="reveal-secret-text" id="reveal-secret-text">
+            </div>
+            <input type="hidden" name="product-id" id="product-id"/>
+            <input type="submit" value="Reveal Bid" class="input_sub">
+        </form>
+        <form id="finalize-auction">
+            <input type="hidden" name="product-id" id="product-id"/>
+            <input type="submit" class="finalize" value="Finalize Auction">
+        </form>
+    </div>
+
+</div>
+
+<div class="center_wrap">
+    <div class="left_con">
+        <h3>Categories</h3>
+        <ul class="left_menu" id="categories">
+            <!-- <li><a href="#">electricity</a></li>
+            <li><a href="#">fashion</a></li>
+            <li><a href="#">furniture</a></li>
+            <li><a href="#">jewellery</a></li>
+            <li><a href="#">precious metal</a></li> -->
+        </ul>
+        <a href="index.html" class="add_goods noradius">index</a>
+        <a href="list-item.html" class="add_goods">List Item</a>
+    </div>
+    <div class="right_con">
+        <h4 class="list_title notop"><span>拍卖详情</span></h4>
+        <div id="product-status">
+        </div>
+        <div id="escrow-info">
+            <div id="buyer"></div>
+            <div id="seller"></div>
+            <div id="arbiter"></div>
+            <div id="release-count"></div>
+            <div id="refund-count"></div>
+            <a id="release-funds" class="btn form-submit">向卖家付款</a>
+            <a id="refund-funds" class="btn form-submit">向买家退款</a>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    Copyright &copy; Mybid.com 2018,All Rights Reserved.
+</div>
+
+<div class="alert" id="msg"></div>
+</body>
+</html>
+
